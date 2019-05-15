@@ -2,7 +2,8 @@
 matplotlib service
 
 
-## 柱状图
+##  API 
+多柱状图
 columnInRequest
 ```js
 {
@@ -17,3 +18,8 @@ columnInResponse
 ```python
 bytes
 ```
+| method | path | query | request | response | remark |
+| ------ | ---- | ----- | ------- | -------- | ------ |
+| POST | /api/v1/column | ----- | columnInRequest | columnInResponse | ------ |
+
+
