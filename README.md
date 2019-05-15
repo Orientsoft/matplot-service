@@ -4,6 +4,7 @@ matplotlib service
 
 ##  API 
 多柱状图
+
 columnInRequest
 ```js
 {
