@@ -1,7 +1,16 @@
 FROM python:3.6-alpine as base
 
 FROM base as builder
-RUN apk --no-cache add \
+RUN apk --no-cache add jpeg-dev \
+                       zlib-dev \
+                       freetype-dev \
+                       lcms2-dev \
+                       openjpeg-dev \
+                       tiff-dev \
+                       tk-dev \
+                       tcl-dev \
+                       harfbuzz-dev \
+                       fribidi-dev \
                        gcc \
                        musl-dev \
                        g++
