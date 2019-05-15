@@ -10,7 +10,7 @@ RUN apk --no-cache add jpeg-dev \
                        tk-dev \
                        tcl-dev \
                        harfbuzz-dev \
-                       fribidi-dev
+                       fribidi-dev \
                        gcc \
                        musl-dev \
                        g++
