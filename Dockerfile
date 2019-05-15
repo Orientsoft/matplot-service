@@ -22,7 +22,16 @@ RUN pip install --install-option="--prefix=/install" -r /requirements.txt
 #-i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 
 FROM base
-
+RUN apk --no-cache add jpeg-dev \
+                       zlib-dev \
+                       freetype-dev \
+                       lcms2-dev \
+                       openjpeg-dev \
+                       tiff-dev \
+                       tk-dev \
+                       tcl-dev \
+                       harfbuzz-dev \
+                       fribidi-dev
 COPY static/fonts /usr/share/fonts
 
 COPY --from=builder /install /usr/local
