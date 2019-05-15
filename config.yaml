@@ -1,0 +1,6 @@
+#应用监听的ip
+HOST: '0.0.0.0'
+#应用的端口
+PORT: 31788
+#应用debug模式
+DEBUG: false

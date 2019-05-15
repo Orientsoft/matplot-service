@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: matplot-service
+  # namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: moop
+      service: matplot-service
+  template:
+    metadata:
+      labels:
+        app: moop
+        service: matplot-service
+    spec:
+      serviceAccountName: moop
+
+      containers:
+      - name: moop-matplot-service
+        image: registry.datadynamic.io/moop/moop-matplot-service:{IMAGE_TAG_for_change}
+        volumeMounts:
+        - name:  matplot-service-config
+          mountPath: /app/config.yaml
+          subPath: config.yaml
+
+        resources: {}
+          # requests:
+          #   memory: 32Mi
+          #   cpu: 40m
+          # limits:
+          #   memory: 2Gi
+          #   cpu: 1
+
+
+      imagePullSecrets:
+      - name: regcred
+
+      volumes:
+      - name:  matplot-service-config
+        configMap:
+          name: matplot-service-config
