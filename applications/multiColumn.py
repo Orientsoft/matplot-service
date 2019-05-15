@@ -5,6 +5,7 @@ from io import BytesIO
 import numpy as np
 import matplotlib as mpl
 from matplotlib import pyplot as plt
+import logging
 
 mpl.rcParams[u'font.sans-serif'] = ['simhei']
 mpl.rcParams['axes.unicode_minus'] = False
@@ -35,6 +36,7 @@ class multiColumn:
     def result(self):
         coordinate = self.request.json.get('coordinate')
         data = self.request.json.get('data')
+        logging.error(self.request.json)
         return self.draw(coordinate, data)
 
     @staticmethod
