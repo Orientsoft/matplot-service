@@ -4,10 +4,10 @@ import time
 from io import BytesIO
 import numpy as np
 import matplotlib as mpl
+from matplotlib.font_manager import *
 from matplotlib import pyplot as plt
 import logging
-
-mpl.rcParams[u'font.sans-serif'] = ['simhei']
+myfont = FontProperties(fname='/usr/share/fonts/msyh.ttf')
 mpl.rcParams['axes.unicode_minus'] = False
 
 
@@ -57,10 +57,10 @@ class multiColumn:
             width = total_width / n
             fig, ax = plt.subplots()
             # y轴
-            ax.set_ylabel(coordinate['y'])
+            ax.set_ylabel(coordinate['y'],fontproperties=myfont)
             # x轴
             ax.set_xticks(ind)
-            ax.set_xticklabels(coordinate['x'])
+            ax.set_xticklabels(coordinate['x'],fontproperties=myfont)
 
             ind = ind - (total_width - width) / 2
             i = 0
@@ -69,7 +69,7 @@ class multiColumn:
                 i += 1
                 autolabel(temp, ax)
 
-            ax.legend()
+            ax.legend(prop=myfont)
             # 文件流
             canvas = fig.canvas
             buffer = BytesIO()
