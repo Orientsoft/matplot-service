@@ -6,7 +6,7 @@ metadata:
 spec:
   ports:
   - name: matplot-service-http
-    nodePort: 31786
+    nodePort: 31788
     port: 80
     protocol: TCP
     targetPort: 80
