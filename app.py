@@ -11,4 +11,4 @@ with open('config.yaml', 'r', encoding='utf-8') as f:
 # 引入蓝图，api版本由各蓝图决定
 from applications.api import api
 
-app.register_blueprint(api, url_prefix='/api/v1')
+app.register_blueprint(api)
