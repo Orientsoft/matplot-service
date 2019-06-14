@@ -19,4 +19,4 @@ app.register_blueprint(api)
 @app.errorhandler(Exception)
 def error_handler(error):
     logging.error('Request Error: {}\nStack: {}\n'.format(error, traceback.format_exc()))
-    return 'matplot-service 未知错误', 500
+    return 'MATPLOT-SERVICE 未知错误', 500
